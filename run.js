@@ -7,8 +7,13 @@ function write(text){
     process.stdout.write(text);
 }
 
-write('Hello world')
+let date = new Date()
+let time = date.toTimeString().substring(0, 8);
+write(time);
 
-setTimeout(() = > {
-    write(ESC + '[5D' + 'KMS23')
-}, 5000);
+setInterval(() => {
+    write(ESC + '[8D')
+    let date = new Date()
+let time = date.toTimeString().substring(0, 8);
+write(time);
+}, 1000);     //live kelllaeg iga sekund
